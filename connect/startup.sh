@@ -5,6 +5,8 @@ set -x
 
 # Deactivate license when it exists
 deactivate() {
+    tail -n 200 /var/log/rstudio-connect.log
+    
     echo "Deactivating license ..."
     /opt/rstudio-connect/bin/license-manager deactivate >/dev/null 2>&1
 }
